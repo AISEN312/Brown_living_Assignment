@@ -27,17 +27,24 @@ app.post('/cart', (req, res) => {
   const { productId, quantity } = req.body;
 
   // Validation
-  if (!productId || !quantity) {
+  if (productId === undefined || productId === null || quantity === undefined || quantity === null) {
     return res.status(400).json({
       success: false,
       error: 'Product ID and quantity are required'
     });
   }
 
-  if (typeof quantity !== 'number' || quantity <= 0) {
+  if (typeof productId !== 'number') {
     return res.status(400).json({
       success: false,
-      error: 'Quantity must be a positive number'
+      error: 'Product ID must be a number'
+    });
+  }
+
+  if (typeof quantity !== 'number' || !Number.isInteger(quantity) || quantity <= 0) {
+    return res.status(400).json({
+      success: false,
+      error: 'Quantity must be a positive integer'
     });
   }
 

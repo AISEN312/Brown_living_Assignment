@@ -123,7 +123,7 @@ curl -X POST http://localhost:3000/cart \
 
 ## Testing the APIs
 
-You can test the APIs using curl, Postman, or any HTTP client.
+Test the APIs using curl, Postman, or any HTTP client.
 
 ### Example using curl:
 
@@ -139,16 +139,4 @@ You can test the APIs using curl, Postman, or any HTTP client.
      -d '{"productId": 3, "quantity": 5}'
    ```
 
-## Project Structure
 
-```
-.
-├── index.js          # Main application file with Express server and API routes
-├── package.json      # Node.js dependencies and scripts
-├── .gitignore        # Git ignore file
-└── README.md         # This file
-```
-
-## License
-
-ISC
